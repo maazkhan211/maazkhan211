@@ -1,162 +1,158 @@
-<div align="center">
+## Hi, I'm Maaz! 👋
 
-# Maaz Rehman
+**AI/ML & Data Analyst**<br/>
+🎓 BS Material Engineering — [GIK Institute](https://giki.edu.pk) graduate<br/>
+💼 AI/ML & Data Analyst at **AIRLOOP**, Islamabad<br/>
+📐 Registered Material Engineer (PEC: METAL/007239) · Washington Accord Accredited
 
-### I build AI systems that never phone home.
+AI/ML and Data Analyst with hands-on experience building **production Python automation pipelines** and **interactive geospatial dashboards** over large-scale road asset inventory data, alongside privacy-first **LLM systems (RAG and agentic pipelines)**. Strong across data engineering, geospatial analysis and BI visualisation — Power BI, ArcGIS, Tableau and PostgreSQL. Currently seeking **full-time AI/ML, data analytics and data engineering roles in Pakistan and remote**.
 
-**Four AI systems. Zero API keys. Zero cloud calls. Zero cost per inference.**
-
-<br>
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
-![Ollama](https://img.shields.io/badge/Ollama-000000?style=flat-square&logo=ollama&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-FF6B35?style=flat-square&logo=databricks&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
-![Optuna](https://img.shields.io/badge/Optuna-1B5E8C?style=flat-square&logo=optuna&logoColor=white)
-
-</div>
+<a href="https://linkedin.com/in/maaz-rehman-505131233"><img src="https://img.shields.io/badge/LinkedIn-maaz--rehman-0A66C2?style=flat-square&logo=linkedin&logoColor=white" /></a>
+<a href="mailto:maazrehman368@gmail.com"><img src="https://img.shields.io/badge/Email-maazrehman368-EA4335?style=flat-square&logo=gmail&logoColor=white" /></a>
+<img src="https://komarev.com/ghpvc/?username=maazkhan211&style=flat-square&color=2F81F7&label=Profile+views" />
 
 ---
 
-## The through-line
+### 🧠 A little more about me...
 
-Every project on this profile runs **entirely on the machine it's installed on**. The LLM, the
-embeddings, the vision model, the vector store — all local, served by [Ollama](https://ollama.com).
+```python
+class MaazRehman:
 
-That constraint isn't a limitation I worked around. It's the design goal:
+    def __init__(self):
+        self.name     = "Maaz Rehman"
+        self.role     = "AI/ML & Data Analyst"
+        self.location = "Islamabad, Pakistan"
 
-> **Nothing you paste ever leaves your laptop, and it costs nothing to run.**
+        self.code     = ["Python", "SQL", "DAX", "JavaScript"]
+        self.data     = ["PostgreSQL", "ETL Pipelines", "Web Scraping",
+                         "Data Cleaning & QA"]
+        self.bi       = ["Power BI", "Tableau", "ArcGIS",
+                         "Geospatial Analysis", "Drill-through Reporting"]
+        self.ml       = ["scikit-learn", "XGBoost", "Optuna", "SHAP"]
+        self.llm      = ["RAG", "Agentic Pipelines", "Ollama",
+                         "ChromaDB", "STT / TTS"]
+        self.infra    = ["FastAPI", "Streamlit", "Gradio", "n8n", "Twilio"]
 
-It also forces the interesting engineering. When you can't hide behind a fast hosted endpoint, you
-have to actually profile the pipeline, pick the right model size for the job, and prove your
-accuracy didn't fall off a cliff when you did.
+        self.focus    = [
+            "turning messy asset data into dashboards people actually act on",
+            "LLM systems that run on your own hardware, not someone's API",
+            "profiling the pipeline before optimising it",
+        ]
 
----
-
-## What I've built
-
-| | Project | The one-line pitch |
-|---|---|---|
-| 🚨 | **[Triagent](https://github.com/maazkhan211/triagent)** | Paste a 3am stack trace → severity, root cause, and how your team fixed it last time |
-| 🔬 | **[AutoML Benchmark Tool](https://github.com/maazkhan211/automl-benchmark-tool)** | AutoML built from scratch — Optuna tuning, leakage-safe pipelines, SHAP explanations |
-| 📄 | **[Multimodal RAG](https://github.com/maazkhan211/Multimodal-RAG)** | Treats PDF prose, tables, and figures as three *different* kinds of evidence |
-| 💬 | **[Agentic RAG](https://github.com/maazkhan211/Agentic-RAG)** | The foundation — FastAPI + ChromaDB + local embeddings, end to end |
-
-<br>
-
-### 🚨 [Triagent](https://github.com/maazkhan211/triagent) — local-first log triage
-
-Anyone can ask an LLM *"what does this error mean."* The value here is **matching the incident
-against what your team already solved** — pulling back the resolution notes from similar past
-incidents by vector similarity, so the answer is "we've seen this; here's the fix."
-
-**Why it's more than a wrapper:**
-
-- **3.5× faster, measured.** 173s → 50s per report across three changes — merging two LLM calls
-  into one, killing a duplicate embedding, and dropping from an 8B model to a 3B. Each step is
-  benchmarked in the README, and the eval score **didn't move**.
-- **It ships its own adversarial eval.** Eight logs written specifically to fool a keyword
-  classifier. Rule-based baseline: **0/8**. LLM: **5/8**. The three failures are documented
-  case-by-case — because a triage aid that hides its error modes isn't a triage aid.
-- **Rules *and* LLM, with the disagreement made visible.** A `FATAL` on a staging box isn't an
-  outage. The keyword rule can't know that; the LLM can. When they disagree the LLM overrides —
-  and you see both verdicts, so the override is never silent.
-- **Built for when no human is watching.** The `/webhook` endpoint returns `202 Accepted`
-  immediately rather than blocking for ~50s, because alerting tools time out and *retry* — which
-  would silently duplicate every triage. It sniffs Sentry, Alertmanager, and Datadog payload
-  shapes so it doesn't care which tool fired it.
-
-<br>
-
-### 🔬 [AutoML Benchmark Tool](https://github.com/maazkhan211/automl-benchmark-tool)
-
-**A self-built AutoML tool — not a wrapper around someone else's AutoML library.** Hand it a CSV
-and a target column; it detects classification vs. regression, runs a 5-fold cross-validated
-Optuna study over each candidate model's search space, benchmarks the winners on an untouched test
-set, and explains the winning model with SHAP.
-
-The point is demonstrating the *actual mechanics* of model selection:
-
-- **Leakage-safe by construction** — imputation, encoding, and scaling all live inside an sklearn
-  `Pipeline` fit only on training folds.
-- **Honest evaluation** — best hyperparameters get refit on full train, then scored once on a
-  test set the search never touched.
-- **Explanations a human can read** — SHAP feature names are cleaned up (`bp`, not `num__bp`), so
-  the charts make sense to someone who doesn't know the preprocessing internals.
-- Ships as a Gradio app you can demo live, and exports the winning pipeline as a `.joblib`.
-
-<br>
-
-### 📄 [Multimodal RAG](https://github.com/maazkhan211/Multimodal-RAG)
-
-Most RAG pipelines flatten a PDF into text and lose the two things that carried the actual
-information. This one keeps them apart:
-
-- **Tables** → extracted to structured Markdown and retained **verbatim**, so exact lookups stay exact.
-- **Figures** → saved as image files and captioned locally by `moondream` for semantic retrieval,
-  while the **original image is still shown in the UI as evidence**.
-- **Prose** → chunked independently.
-
-Plus a standalone crawler that respects `robots.txt`, rate-limits itself, and verifies
-`Content-Type` before downloading a PDF — then folds scraped sites and uploaded documents into a
-single merged local knowledge base. Every retrieved item keeps its page number or URL, so the UI
-can cite it.
-
-<br>
-
-### 💬 [Agentic RAG](https://github.com/maazkhan211/Agentic-RAG)
-
-The one that started it — a complete local RAG stack with a FastAPI backend, ChromaDB vector
-store, sentence-transformers embeddings, Ollama generation, and a plain web chat UI. No hosted
-anything.
+    def currently(self):
+        return {
+            "working_on": "geospatial analytics & Python automation @ AIRLOOP",
+            "shipped":    "dashboards across 11 road asset categories - in stakeholder use",
+            "open_to":    "full-time AI/ML, data analytics & data engineering - PK & remote",
+            "ask_me":     "RAG, local LLMs, Power BI, geospatial data, ETL",
+        }
+```
 
 ---
 
-## How I build
+### 💼 Experience
 
-**I measure before I optimize.** "Feels slow" isn't a finding. The Triagent README has a table of
-three changes with a wall-clock number against each, and a note on which one actually mattered.
+**AI/ML & Data Analyst** · AIRLOOP, Islamabad — *Dec 2024 – Present*
+Developed and deployed **end-to-end Python automation pipelines** integrating CSV, XML, KML and visualisation workflows, consolidating standalone scripts into unified execution runs and sharply reducing manual intervention. Designed and published interactive dashboards across **11 road asset categories** — traffic signs, road markings, sidewalks and more — in **Power BI, ArcGIS and Tableau**, integrating GDB datasets for stakeholder-facing geospatial visualisation. Ran preprocessing, cleaning, QA and geospatial analysis over road asset inventory data on **PostgreSQL** at scale, and automated GDB layer export and maintenance while optimising inter-layer data models.
 
-**I publish what doesn't work.** Every project has a *Known limitations* section. Triagent's opens
-with "~50s per triage on CPU" and "5/8 on adversarial edge cases," and states plainly that it's a
-**triage aid for a human, not an autopilot.** A benchmark you can't fail isn't a benchmark.
-
-**I pick the boring tool when it's the right one.** Triagent parses logs with regex instead of
-`drain3`, because template mining pays off when clustering thousands of near-identical streaming
-lines — and here every input is a single one-off incident. Plain regex is more precise and drops
-a dependency.
-
-**I keep two implementations when they measure different things.** Triagent's app uses a merged
-one-call prompt because it's twice as fast. Its *eval* uses an isolated severity prompt — because
-if the model were reasoning about root cause in the same breath, the eval would no longer be
-measuring the severity classifier on its own. Different jobs, different prompts, on purpose.
-
-**I design for the system, not just the demo.** The slowest step in any "paste your error here"
-tool is a human noticing the error. So the interesting endpoint is the webhook, not the dashboard.
+**Software Development Intern** · DeviQo — Software Options (Pvt.) Ltd., Peshawar — *Jul – Sep 2022*
+Built and maintained front-end features across multiple client web projects using HTML, CSS, JavaScript and Bootstrap.
 
 ---
 
-## Toolkit
+### ⚙️ Tech I work with
 
-**Languages** · Python
+<img src="https://skillicons.dev/icons?i=python,postgres,fastapi,sklearn,js,html,css,bootstrap&theme=dark&perline=8" />
 
-**AI / ML** · Ollama · LangChain-style RAG pipelines · ChromaDB · sentence-transformers ·
-`nomic-embed-text` · `llama3.2` / `llama3.1` · `moondream` (vision) · scikit-learn · XGBoost ·
-Optuna · SHAP
-
-**Backend & apps** · FastAPI · Uvicorn · Streamlit · Gradio · PyMuPDF · pytest
-
-**Practices** · Local-first architecture · retrieval-augmented generation · hyperparameter search ·
-model explainability · adversarial evaluation · performance profiling
+<sub>`Power BI` · `Tableau` · `ArcGIS` · `DAX` · `PostgreSQL` · `Ollama` · `ChromaDB` · `Sentence-Transformers` · `Streamlit` · `Gradio` · `Optuna` · `SHAP` · `XGBoost` · `PyMuPDF` · `n8n` · `Twilio Voice API` · `pytest` · `SolidWorks`</sub>
 
 ---
 
-<div align="center">
+### 🚀 What I've built
 
-**Everything above installs with `pip install -r requirements.txt` and runs on your own hardware.**
+<table>
+<tr>
+<td width="50%" valign="top">
 
-No accounts. No keys. No billing.
+#### ▸ [triagent](https://github.com/maazkhan211/triagent)
+**Local-first log triage agent.** Paste an error log — get severity, likely root cause, and similar past incidents *with the fix that worked*.
 
-</div>
+A keyword rule and the LLM run side by side; when they disagree the LLM overrides, and **both verdicts stay visible**. Profiled **173s → 50s** per report with no drop in eval score.
+
+<sub>`Ollama` `ChromaDB` `FastAPI` `Streamlit` `RAG`</sub>
+
+</td>
+<td width="50%" valign="top">
+
+#### ▸ AI-Powered Calling Agent
+**Real-time voice interaction.** Automated outbound calling agent built on **n8n** for workflow orchestration and **Twilio** for call handling.
+
+LLM dialogue management over STT/TTS pipelines holds context across **multi-turn conversations**. Call scheduling, transcript logging and latency testing automated for production reliability.
+
+<sub>`n8n` `Twilio Voice API` `LLM` `STT / TTS`</sub>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### ▸ Healthcare Wait List Analytics
+**Power BI over 709K+ NHS cases** (2018–2021), segmented by case type — Outpatient, Day Case, Inpatient — age profile and specialty.
+
+KPI cards, donut and stacked bar charts with an **Average/Median DAX toggle**, drill-through slicers, and a monthly trend panel surfacing seasonal patterns and backlog growth.
+
+<sub>`Power BI` `DAX` `Data Modelling`</sub>
+
+</td>
+<td width="50%" valign="top">
+
+#### ▸ [Multimodal-RAG](https://github.com/maazkhan211/Multimodal-RAG)
+**Prose, tables and figures as three separate kinds of evidence.** Tables kept verbatim as Markdown so exact lookups stay exact; figures captioned locally for semantic search and still shown as visual proof.
+
+Ships a `robots.txt`-respecting crawler that merges scraped sites and uploaded PDFs into one knowledge base.
+
+<sub>`Streamlit` `PyMuPDF` `Ollama` `moondream`</sub>
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+#### ▸ [Agentic-RAG](https://github.com/maazkhan211/Agentic-RAG)
+**Fully offline agentic RAG chatbot.** An agent layer routes casual chat straight to the LLM and grounds factual questions in ChromaDB-retrieved, **source-cited** context.
+
+FastAPI REST backend behind a lightweight web chat UI — no cloud APIs, no paid services.
+
+<sub>`FastAPI` `ChromaDB` `Ollama` `Sentence-Transformers`</sub>
+
+</td>
+<td width="50%" valign="top">
+
+#### ▸ [automl-benchmark-tool](https://github.com/maazkhan211/automl-benchmark-tool)
+**AutoML built from scratch** — not a wrapper around someone else's AutoML library.
+
+Auto-detects classification vs. regression, runs 5-fold cross-validated **Optuna** studies per candidate model, scores on an untouched test set, and explains the winner with **SHAP**. Preprocessing is leakage-safe by construction.
+
+<sub>`scikit-learn` `XGBoost` `Optuna` `SHAP` `Gradio`</sub>
+
+</td>
+</tr>
+</table>
+
+---
+
+### 🏆 Certifications & Achievements
+
+- 🥈 **2nd position, Industrial Open House 2024** — plus a Certificate of Quality Assurance and performance bonus for on-the-job contribution.
+- 📜 **Registered Material Engineer**, Pakistan Engineering Council (METAL/007239) — Washington Accord accredited.
+- 💻 **Certified in Web Development (Front-End).**
+
+---
+
+### 📈 Stats
+
+<img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=maazkhan211&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=2F81F7&langs_count=8" />
+
+---
+
+<sub>📫 Reach me at **maazrehman368@gmail.com** or on [LinkedIn](https://linkedin.com/in/maaz-rehman-505131233) — happy to talk RAG, local LLMs, dashboards, or anything data-shaped.</sub>
