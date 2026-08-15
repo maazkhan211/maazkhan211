@@ -55,9 +55,6 @@ class MaazRehman:
 **AI/ML & Data Analyst** · AIRLOOP, Islamabad — *Dec 2024 – Present*
 Developed and deployed **end-to-end Python automation pipelines** integrating CSV, XML, KML and visualisation workflows, consolidating standalone scripts into unified execution runs and sharply reducing manual intervention. Designed and published interactive dashboards across **11 road asset categories** — traffic signs, road markings, sidewalks and more — in **Power BI, ArcGIS and Tableau**, integrating GDB datasets for stakeholder-facing geospatial visualisation. Ran preprocessing, cleaning, QA and geospatial analysis over road asset inventory data on **PostgreSQL** at scale, and automated GDB layer export and maintenance while optimising inter-layer data models.
 
-**Software Development Intern** · DeviQo — Software Options (Pvt.) Ltd., Peshawar — *Jul – Sep 2022*
-Built and maintained front-end features across multiple client web projects using HTML, CSS, JavaScript and Bootstrap.
-
 ---
 
 ### ⚙️ Tech I work with
@@ -144,14 +141,17 @@ Auto-detects classification vs. regression, runs 5-fold cross-validated **Optuna
 ### 🏆 Certifications & Achievements
 
 - 🥈 **2nd position, Industrial Open House 2024** — plus a Certificate of Quality Assurance and performance bonus for on-the-job contribution.
-- 📜 **Registered Material Engineer**, Pakistan Engineering Council (METAL/007239) — Washington Accord accredited.
 - 💻 **Certified in Web Development (Front-End).**
 
 ---
 
-### 📈 Stats
+### 🐍 Watch the laziness eat my commits
 
-<img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=maazkhan211&layout=compact&theme=github_dark&hide_border=true&bg_color=0D1117&title_color=2F81F7&langs_count=8" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/maazkhan211/maazkhan211/output/github-snake-dark.svg" />
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/maazkhan211/maazkhan211/output/github-snake.svg" />
+  <img width="100%" alt="snake eating my contribution graph" src="https://raw.githubusercontent.com/maazkhan211/maazkhan211/output/github-snake.svg" />
+</picture>
 
 ---
 
