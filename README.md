@@ -1,9 +1,9 @@
 ## Hi, I'm Maaz! 👋
 
 **AI/ML & Data Analyst**<br/>
-🎓 BS Material Engineering — [GIK Institute](https://giki.edu.pk) graduate<br/>
+GIKI Graduate Engineering — [GIK Institute](https://giki.edu.pk) graduate<br/>
 💼 AI/ML & Data Analyst at **AIRLOOP**, Islamabad<br/>
-📐 Registered Material Engineer (PEC: METAL/007239) · Washington Accord Accredited
+📐 Registered Engineer · Washington Accord Accredited
 
 AI/ML and Data Analyst with hands-on experience building **production Python automation pipelines** and **interactive geospatial dashboards** over large-scale road asset inventory data, alongside privacy-first **LLM systems (RAG and agentic pipelines)**. Strong across data engineering, geospatial analysis and BI visualisation — Power BI, ArcGIS, Tableau and PostgreSQL. Currently seeking **full-time AI/ML, data analytics and data engineering roles in Pakistan and remote**.
 
